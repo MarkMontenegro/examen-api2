@@ -1,0 +1,5 @@
+package com.montenegro.infraccionservice.converter;
+
+public class AbstractConverter {
+
+}

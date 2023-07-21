@@ -1,0 +1,79 @@
+package com.montenegro.infraccionservice.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.montenegro.infraccionservice.entity.Infracciones;
+import com.montenegro.infraccionservice.exceptions.GeneralServiceException;
+import com.montenegro.infraccionservice.exceptions.NoDataFoundException;
+import com.montenegro.infraccionservice.service.InfraccionService;
+
+import lombok.extern.slf4j.Slf4j;
+
+import com.montenegro.infraccionservice.repository.InfraccionRepository;
+
+
+@Service
+@Slf4j
+
+public class InfraccionServiceImpl implements InfraccionService{
+	@Autowired
+	private InfraccionRepository repository;
+	@Override
+	@Transactional(readOnly = true)
+	public List<Infracciones> findAll(Pageable page) {
+	
+		try {
+			return repository.findAll(page).toList();
+		} catch (NoDataFoundException e) {
+			log.info(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+			throw new GeneralServiceException(e.getMessage(),e);
+		}
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Infracciones> findByDni(String dni, Pageable page) {
+		try {
+			return repository.findAll(page).toList();
+		} catch (NoDataFoundException e) {
+			log.info(e.getMessage());
+			throw e;
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+			throw new GeneralServiceException(e.getMessage(),e);
+		}
+	}
+
+	@Override
+	public Infracciones findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Infracciones save(Infracciones infraccion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Infracciones update(Infracciones infraccion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

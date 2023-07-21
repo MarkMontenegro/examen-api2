@@ -1,0 +1,5 @@
+package com.montenegro.infraccionservice.exceptions;
+
+public class ValidateServiceException {
+
+}

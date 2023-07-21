@@ -1,0 +1,5 @@
+package com.montenegro.infraccionservice.controller;
+
+public class InfraccionController {
+
+}

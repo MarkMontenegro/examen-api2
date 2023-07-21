@@ -1,0 +1,5 @@
+package com.montenegro.infraccionservice.service;
+
+public interface InfraccionService {
+
+}

@@ -1,0 +1,18 @@
+package com.montenegro.infraccionservice.config;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
+import lombok.extern.slf4j.Slf4j;
+import com.montenegro.infraccionservice.exceptions.GeneralServiceException;
+import com.montenegro.infraccionservice.exceptions.NoDataFoundException;
+import com.montenegro.infraccionservice.exceptions.ValidateServiceException;
+import com.montenegro.infraccionservice.utils.WrapperResponse;
+
+public class ErrorHandlerConfig extends ResponseEntityExceptionHandler {
+	
+}

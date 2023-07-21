@@ -1,0 +1,5 @@
+package com.montenegro.infraccionservice.dto;
+
+public class InfraccionDTO {
+
+}
